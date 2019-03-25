@@ -57,8 +57,8 @@
 
 	var Main = __webpack_require__(216);
 	var Weather = __webpack_require__(218);
-	var About = __webpack_require__(219);
-	var Examples = __webpack_require__(220);
+	var About = __webpack_require__(221);
+	var Examples = __webpack_require__(222);
 
 	ReactDOM.render(React.createElement(
 		Router,
@@ -25208,15 +25208,23 @@
 	'use strict';
 
 	var React = __webpack_require__(1);
+	var WeatherForm = __webpack_require__(219);
+	var WeatherMessage = __webpack_require__(220);
 
 	var Weather = React.createClass({
 		displayName: 'Weather',
 
 		render: function render() {
 			return React.createElement(
-				'h3',
+				'div',
 				null,
-				' Weather Component '
+				React.createElement(
+					'h3',
+					null,
+					'Get Weather '
+				),
+				React.createElement(WeatherForm, null),
+				React.createElement(WeatherMessage, null)
 			);
 		}
 	});
@@ -25225,6 +25233,63 @@
 
 /***/ },
 /* 219 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var WeatherForm = React.createClass({
+		displayName: "WeatherForm",
+
+		render: function render() {
+			return React.createElement(
+				"div",
+				null,
+				React.createElement(
+					"form",
+					null,
+					React.createElement("input", { type: "text", placeholder: "Enter City Name" }),
+					React.createElement(
+						"button",
+						null,
+						"Get Weather"
+					)
+				)
+			);
+		}
+	});
+
+	module.exports = WeatherForm;
+
+/***/ },
+/* 220 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var WeatherMessage = React.createClass({
+		displayName: 'WeatherMessage',
+
+		render: function render() {
+			return React.createElement(
+				'div',
+				null,
+				React.createElement(
+					'h4',
+					null,
+					'It is 50\xB0C in Maputo'
+				)
+			);
+		}
+	});
+
+	module.exports = WeatherMessage;
+
+/***/ },
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25246,7 +25311,7 @@
 	module.exports = About;
 
 /***/ },
-/* 220 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
